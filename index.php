@@ -1,3 +1,5 @@
+<!DOCTYPE
+
 <?php
 
 function createDeck()
@@ -214,23 +216,22 @@ $cards= array(
           
     );
     echo '<img src="$cards[0]["Picture"]">';
-    
     return $cards;
 }
     $players = array(
     array("Name"=>"John",
-        "Image" => "../assets/players/face1.png"),
+        "Image" => "./assets/players/face1.png"),
     array("Name"=>"Joe",
-        "Image"=> "../assets/players/face2.png"),
+        "Image"=> "./assets/players/face2.png"),
     array("Name" => "Jane",
-        "Image"=>"../assets/players/face3.png"),
+        "Image"=>"./assets/players/face3.png"),
     array("Name" => "Jerry",
-        "Image"=> "../assets/players/face3.png"),
+        "Image"=> "./assets/players/face3.png"),
     
     );
     $table = [];
 $deck=$cards;
-
+echo "Test";
 //var_dump($deck);
 //shuffle($deck);
 //var_dump($deck);
@@ -238,33 +239,3 @@ $deck=$cards;
 
 
 
-
-
-
-
-
-
-
-
-?>
-<html>
-
-<head>
-     
-      
-    <title> </title>
-</head>
-
-<body>
-    <? php 
-    
-    
-    
-   
-
-    
-    ?>
-
-</body>
-
-</html>
