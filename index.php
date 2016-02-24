@@ -1,6 +1,7 @@
-<<<<<<< HEAD
 <?php
 
+function createDeck()
+{
 $cards= array(
          array("Suite"=>"Clubs",
           "Value"=>1,
@@ -212,14 +213,16 @@ $cards= array(
           "Picture"=>"../assets/spades/13.png"),
           
     );
+    echo '<img src="$cards[0]["Picture"]">';
     
-
-for($i=0;$i<52;$i++)
-{
-echo $cards[$i]["Suite"];
-echo "<br>";
+    return $cards;
 }
+    
+$deck=$cards;
 
+//var_dump($deck);
+//shuffle($deck);
+//var_dump($deck);
 
 
 
@@ -233,10 +236,11 @@ echo "<br>";
 
 
 ?>
-=======
 <html>
 
 <head>
+     
+      
     <title> </title>
 </head>
 
@@ -245,14 +249,11 @@ echo "<br>";
     
     
     
-    
-    
-    
-    
+   
+
     
     ?>
 
 </body>
 
 </html>
->>>>>>> 82056622f038c0e7efc5407b617f0d08d14fdbde
