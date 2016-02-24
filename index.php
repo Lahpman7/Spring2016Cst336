@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 $cards= array(
@@ -232,3 +233,26 @@ echo "<br>";
 
 
 ?>
+=======
+<html>
+
+<head>
+    <title> </title>
+</head>
+
+<body>
+    <? php 
+    
+    
+    
+    
+    
+    
+    
+    
+    ?>
+
+</body>
+
+</html>
+>>>>>>> 82056622f038c0e7efc5407b617f0d08d14fdbde
