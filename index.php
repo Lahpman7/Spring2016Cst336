@@ -1,4 +1,4 @@
-<!DOCTYPE
+
 
 <?php
 
@@ -214,17 +214,12 @@ $cards= array(
           "Picture"=>"./assets/cards/spades/13.png"),
           
     );
-<<<<<<< HEAD
-    echo '<img src="$cards[0]["Picture"]">';
-=======
     
-<<<<<<< HEAD
     echo '<img src='.$cards[0]["Picture"].'>';
-   echo $cards[0]["Picture"];
-=======
->>>>>>> 4b782a30b2fcc9be9760ffadca1c673ff9fad664
-    return $cards;
-}
+   // echo '<br>';
+   //echo $cards[0]["Picture"];
+  
+
     $players = array(
     array("Name"=>"John",
         "Image" => "./assets/players/face1.png"),
@@ -233,14 +228,10 @@ $cards= array(
     array("Name" => "Jane",
         "Image"=>"./assets/players/face3.png"),
     array("Name" => "Jerry",
-<<<<<<< HEAD
-        "Image"=> "./assets/players/face3.png"),
-=======
-        "Image"=> "../assets/players/face3.png"),
->>>>>>> 40ae2a8dc486992aae0a9b1c5105b2dc5408ba23
->>>>>>> 4b782a30b2fcc9be9760ffadca1c673ff9fad664
+        "Image"=> "./assets/players/face3.png")
     
     );
+    echo '<img src='.$players[0]["Image"].'>';
     $table = [];
 $deck=$cards;
 echo "Test";
@@ -248,6 +239,6 @@ echo "Test";
 //shuffle($deck);
 //var_dump($deck);
 
-
+?>
 
 
