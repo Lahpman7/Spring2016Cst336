@@ -217,7 +217,18 @@ $cards= array(
     
     return $cards;
 }
+    $players = array(
+    array("Name"=>"John",
+        "Image" => "../assets/players/face1.png"),
+    array("Name"=>"Joe",
+        "Image"=> "../assets/players/face2.png"),
+    array("Name" => "Jane",
+        "Image"=>"../assets/players/face3.png"),
+    array("Name" => "Jerry",
+        "Image"=> "../assets/players/face3.png"),
     
+    );
+    $table = [];
 $deck=$cards;
 
 //var_dump($deck);
