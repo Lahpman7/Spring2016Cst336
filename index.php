@@ -213,9 +213,25 @@ $cards= array(
           
     );
     
+<<<<<<< HEAD
     echo '<img src='.$cards[0]["Picture"].'>';
    echo $cards[0]["Picture"];
+=======
+    return $cards;
+}
+    $players = array(
+    array("Name"=>"John",
+        "Image" => "../assets/players/face1.png"),
+    array("Name"=>"Joe",
+        "Image"=> "../assets/players/face2.png"),
+    array("Name" => "Jane",
+        "Image"=>"../assets/players/face3.png"),
+    array("Name" => "Jerry",
+        "Image"=> "../assets/players/face3.png"),
+>>>>>>> 40ae2a8dc486992aae0a9b1c5105b2dc5408ba23
     
+    );
+    $table = [];
 $deck=$cards;
 
 //var_dump($deck);
