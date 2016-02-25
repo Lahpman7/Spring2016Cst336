@@ -248,20 +248,21 @@ $cards= array(
     echo '<img src='.$players[0]["Image"].'>';
     $table = [];
 
-function deal($cards,$tabl,$tableCount)
+function game($cards,$tabl,$tableCount)
 {
   $deck=$cards;
   shuffle($deck);
   shuffle($deck);
   shuffle($deck);
   $table=$tabl;
- $table["Deck"]=$deck;
-  // var_dump($table);
+  $table["Deck"]=$deck;
   for($i=0;$i<$tableCount;$i++)
   {
-$table=  dealHand($table,$i);
+  $table=  dealHand($table,$i);
   }
-  var_dump($table);
+ var_dump($table);
+  
+  
 }
 function dealHand($play,$seat)
 {
@@ -271,8 +272,10 @@ function dealHand($play,$seat)
   {
      array_push($play["Players"][$seat]["Hand"],$play["Deck"][$i] );
      unset($play["Deck"][$i]);
-      
+    $play["Players"][$seat]["Score"] +=$play["Players"][$seat]["Hand"][$i]["Value"];
   }
+  //var_dump($play["Players"][$seat]["Hand"][0]["Value"]);
+ // var_dump($play["Players"][$seat]["Score"]);
   $play["Deck"]=array_values($play["Deck"]);
  
  // var_dump($play["Players"][$seat]["Hand"]);
@@ -280,7 +283,7 @@ function dealHand($play,$seat)
 return $play; 
 }
 echo "Test";
-echo deal($cards,$tab,4);
+echo game($cards,$tab,4);
 //var_dump($deck);
 //shuffle($deck);
 //var_dump($deck);
