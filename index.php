@@ -3,6 +3,7 @@
 <?php
 
 
+
 $cards= array(
          array("Suite"=>"Clubs",
           "Value"=>1,
@@ -216,25 +217,70 @@ $cards= array(
     );
     
     echo '<img src='.$cards[0]["Picture"].'>';
+
    // echo '<br>';
    //echo $cards[0]["Picture"];
   
 
     $players = array(
     array("Name"=>"John",
-        "Image" => "./assets/players/face1.png"),
+        "Image" => "./assets/players/face1.png",
+        "Hand" =>array(),
+        "Score"=> 0),
     array("Name"=>"Joe",
-        "Image"=> "./assets/players/face2.png"),
+        "Image"=> "./assets/players/face2.png",
+        "Hand" =>array(),
+        "Score"=> 0),
     array("Name" => "Jane",
-        "Image"=>"./assets/players/face3.png"),
+        "Image"=>"./assets/players/face3.png",
+        "Hand" =>array(),
+        "Score"=> 0),
     array("Name" => "Jerry",
-        "Image"=> "./assets/players/face3.png")
+        "Image"=> "./assets/players/face3.png",
+        "Hand" =>array(),
+        "Score"=> 0)
     
     );
+    
+    $tab =array("Players"=>$players,
+                  "Deck"=>array());
+    
     echo '<img src='.$players[0]["Image"].'>';
     $table = [];
-$deck=$cards;
+
+function deal($cards,$tabl,$tableCount)
+{
+  $deck=$cards;
+  shuffle($deck);
+  shuffle($deck);
+  shuffle($deck);
+  $table=$tabl;
+ $table["Deck"]=$deck;
+  // var_dump($table);
+  for($i=0;$i<$tableCount;$i++)
+  {
+$table=  dealHand($table,$i);
+  }
+  var_dump($table);
+}
+function dealHand($play,$seat)
+{
+   
+  $numCards= rand(4,6);
+  for($i=0;$i<$numCards;$i++)
+  {
+     array_push($play["Players"][$seat]["Hand"],$play["Deck"][$i] );
+     unset($play["Deck"][$i]);
+      
+  }
+  $play["Deck"]=array_values($play["Deck"]);
+ 
+ // var_dump($play["Players"][$seat]["Hand"]);
+  
+return $play; 
+}
 echo "Test";
+echo deal($cards,$tab,4);
 //var_dump($deck);
 //shuffle($deck);
 //var_dump($deck);
