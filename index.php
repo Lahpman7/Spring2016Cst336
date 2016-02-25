@@ -222,13 +222,17 @@ $cards= array(
 
     $players = array(
     array("Name"=>"John",
-        "Image" => "./assets/players/face1.png"),
+        "Image" => "./assets/players/face1.png",
+        "Score" => 0),
     array("Name"=>"Joe",
-        "Image"=> "./assets/players/face2.png"),
+        "Image"=> "./assets/players/face2.png",
+        "Score"=> 0),
     array("Name" => "Jane",
-        "Image"=>"./assets/players/face3.png"),
+        "Image"=>"./assets/players/face3.png",
+        "Score" =>0),
     array("Name" => "Jerry",
-        "Image"=> "./assets/players/face3.png")
+        "Image"=> "./assets/players/face3.png",
+        "Score" => 0)
     
     );
     echo '<img src='.$players[0]["Image"].'>';
