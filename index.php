@@ -229,7 +229,7 @@ $cards= array(
         "Hand" =>array(),
         "Score"=> 0),
     array("Name" => "Jerry",
-        "Image"=> "./assets/players/face3.png",
+        "Image"=> "./assets/players/face4.png",
         "Hand" =>array(),
         "Score"=> 0)
     
@@ -249,7 +249,7 @@ function game($cards,$tabl,$tableCount)
   $table["Deck"]=$deck;
   for($i=0;$i<$tableCount;$i++)
   {
-  $table=  dealHand($table,$i);
+  $table = dealHand($table,$i);
   }
  var_dump($table);
   printTable($table);
@@ -278,46 +278,46 @@ function printTable($printme)
     //printme will hold complete array
     //table formatting in progress
     //working on formatting 
-       echo "<table class='stats' cellspacing='0'>
+       echo "<table class='stats' cellspacing='2'>
 
             <tr>
-            <td class='hed' align = ''>SILVER JACK</td>
+            <td class='hed' align = 'center'>SILVER JACK</td>
               </tr>
             <tr>
 
             </tr>";
                //player1
               echo "<tr>";
-              echo "<td>" . "John" . "</td>";
-              echo "<td>" . '<img src='.$printme['Players']["Image"].'>' . "</td>"; // so this will eventually print user pics
-              echo "<td>" . "Card hand" . "</td>";
-              echo "<td>" . "Score" . "</td>";
+              echo "<td>" . "John" . "</td>";//["Players"][$seat]["Score"]
+              echo "<td>" . '<img src='.$printme['Players'][0]["Image"].'>' . "</td>"; // so this will eventually print user pics
+              echo "<td>" . "Card Hand " . "</td>";//maybe a function to loop through hand index
+              echo "<td>" . $printme['Players'][0]['Score'] . "</td>";
               echo "<td>" . "Win/loss". '</td>';
 
               echo "</tr>";
               //player 2
               echo "<tr>";
               echo "<td>" . "Joe" . "</td>";
-              echo "<td>" . "User Pic" . "</td>";
+              echo "<td>" . '<img src='.$printme['Players'][1]["Image"].'>' . "</td>";
               echo "<td>" . "Card Hand" . "</td>";
-              echo "<td>" . "Score" . "</td>";
+              echo "<td>" . $printme['Players'][1]['Score'] . "</td>";
               echo "<td>" . "Win/loss". '</td>';
               echo "</tr>";
               //player 3
               echo "<tr>";
               echo "<td>" . "Jane" . "</td>";
-              echo "<td>" . "User Pic" . "</td>";
+              echo "<td>" . '<img src='.$printme['Players'][2]["Image"].'>' . "</td>";
               echo "<td>" . "Card Hand" . "</td>";
-              echo "<td>" . "Score" . "</td>";
+              echo "<td>" . $printme['Players'][2]['Score'] . "</td>";
               echo "<td>" . "Win/loss". '</td>';
 
               echo "</tr>";
               //player 4
               echo "<tr>";
               echo "<td>" . "Jerry" . "</td>";
-              echo "<td>" . "User Pic" . "</td>";
+              echo "<td>" . '<img src='.$printme['Players'][3]["Image"].'>' . "</td>";
               echo "<td>" . "Card Hand" . "</td>";
-              echo "<td>" . "Score" . "</td>";
+              echo "<td>" . $printme['Players'][3]['Score'] . "</td>";
               echo "<td>" . "Win/loss". '</td>';
               
               echo "</tr>";
@@ -326,8 +326,8 @@ function printTable($printme)
 }
 echo "Test";
 //$final_table = game($cards,$tab,4);
- //game($cards,$tab,4);
-printTable($final_table);
+game($cards,$tab,4);
+//printTable($final_table); //tests outside of worker functions
 //var_dump($deck);
 //shuffle($deck);
 //var_dump($deck);
