@@ -1,9 +1,4 @@
-
-
 <?php
-
-
-
 $cards= array(
          array("Suite"=>"Clubs",
           "Value"=>1,
@@ -217,26 +212,12 @@ $cards= array(
     );
     
     echo '<img src='.$cards[0]["Picture"].'>';
-
    // echo '<br>';
    //echo $cards[0]["Picture"];
   
-
     $players = array(
     array("Name"=>"John",
         "Image" => "./assets/players/face1.png",
-<<<<<<< HEAD
-        "Score" => 0),
-    array("Name"=>"Joe",
-        "Image"=> "./assets/players/face2.png",
-        "Score"=> 0),
-    array("Name" => "Jane",
-        "Image"=>"./assets/players/face3.png",
-        "Score" =>0),
-    array("Name" => "Jerry",
-        "Image"=> "./assets/players/face3.png",
-        "Score" => 0)
-=======
         "Hand" =>array(),
         "Score"=> 0),
     array("Name"=>"Joe",
@@ -251,7 +232,6 @@ $cards= array(
         "Image"=> "./assets/players/face3.png",
         "Hand" =>array(),
         "Score"=> 0)
->>>>>>> 1e9c3635c6f0f5d5ff529334844e176d29d9662f
     
     );
     
@@ -259,11 +239,9 @@ $cards= array(
                   "Deck"=>array());
     
     echo '<img src='.$players[0]["Image"].'>';
-    $table = [];
-
 function game($cards,$tabl,$tableCount)
 {
-  $deck=$cards;
+  $deck=$cards;//assigns
   shuffle($deck);
   shuffle($deck);
   shuffle($deck);
@@ -274,7 +252,7 @@ function game($cards,$tabl,$tableCount)
   $table=  dealHand($table,$i);
   }
  var_dump($table);
-  
+  printTable($table);
   
 }
 function dealHand($play,$seat)
@@ -295,12 +273,62 @@ function dealHand($play,$seat)
   
 return $play; 
 }
+function printTable($printme)
+{
+    //printme will hold complete array
+    //table formatting in progress
+    //working on formatting 
+       echo "<table class='stats' cellspacing='0'>
+
+            <tr>
+            <td class='hed' align = ''>SILVER JACK</td>
+              </tr>
+            <tr>
+
+            </tr>";
+               //player1
+              echo "<tr>";
+              echo "<td>" . "John" . "</td>";
+              echo "<td>" . '<img src='.$printme['Players']["Image"].'>' . "</td>"; // so this will eventually print user pics
+              echo "<td>" . "Card hand" . "</td>";
+              echo "<td>" . "Score" . "</td>";
+              echo "<td>" . "Win/loss". '</td>';
+
+              echo "</tr>";
+              //player 2
+              echo "<tr>";
+              echo "<td>" . "Joe" . "</td>";
+              echo "<td>" . "User Pic" . "</td>";
+              echo "<td>" . "Card Hand" . "</td>";
+              echo "<td>" . "Score" . "</td>";
+              echo "<td>" . "Win/loss". '</td>';
+              echo "</tr>";
+              //player 3
+              echo "<tr>";
+              echo "<td>" . "Jane" . "</td>";
+              echo "<td>" . "User Pic" . "</td>";
+              echo "<td>" . "Card Hand" . "</td>";
+              echo "<td>" . "Score" . "</td>";
+              echo "<td>" . "Win/loss". '</td>';
+
+              echo "</tr>";
+              //player 4
+              echo "<tr>";
+              echo "<td>" . "Jerry" . "</td>";
+              echo "<td>" . "User Pic" . "</td>";
+              echo "<td>" . "Card Hand" . "</td>";
+              echo "<td>" . "Score" . "</td>";
+              echo "<td>" . "Win/loss". '</td>';
+              
+              echo "</tr>";
+
+    echo "</table>";
+}
 echo "Test";
-echo game($cards,$tab,4);
+//$final_table = game($cards,$tab,4);
+ //game($cards,$tab,4);
+printTable($final_table);
 //var_dump($deck);
 //shuffle($deck);
 //var_dump($deck);
-
 ?>
-
-
