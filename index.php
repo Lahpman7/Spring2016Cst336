@@ -211,7 +211,7 @@ $cards= array(
           
     );
     
-    echo '<img src='.$cards[0]["Picture"].'>';
+   // echo '<img src='.$cards[0]["Picture"].'>';
    // echo '<br>';
    //echo $cards[0]["Picture"];
   
@@ -219,26 +219,30 @@ $cards= array(
     array("Name"=>"John",
         "Image" => "./assets/players/face1.png",
         "Hand" =>array(),
-        "Score"=> 0),
+        "Score"=> 0,
+        'Outcome'=> '  '),
     array("Name"=>"Joe",
         "Image"=> "./assets/players/face2.png",
         "Hand" =>array(),
-        "Score"=> 0),
+        "Score"=> 0,
+        "Outcome"=>'  '),
     array("Name" => "Jane",
         "Image"=>"./assets/players/face3.png",
         "Hand" =>array(),
-        "Score"=> 0),
+        "Score"=> 0,
+        'Outcome'=> '  '),
     array("Name" => "Jerry",
         "Image"=> "./assets/players/face4.png",
         "Hand" =>array(),
-        "Score"=> 0)
+        "Score"=> 0,
+        "Outcome"=>'  ')
     
     );
     
     $tab =array("Players"=>$players,
                   "Deck"=>array());
     
-    echo '<img src='.$players[0]["Image"].'>';
+  //  echo '<img src='.$players[0]["Image"].'>';
 function game($cards,$tabl,$tableCount)
 {
   $deck=$cards;//assigns
@@ -251,7 +255,7 @@ function game($cards,$tabl,$tableCount)
   {
   $table = dealHand($table,$i);
   }
- var_dump($table);
+ //var_dump($table);
   printTable($table);
   
 }
@@ -273,11 +277,50 @@ function dealHand($play,$seat)
   
 return $play; 
 }
+function closestNum($mesa, $arr)
+{
+    $max = 0;
+    for($o = 0; $o<4; $o++)
+    {
+       if($mesa['Players'][$o]['Score']  >= $max && $mesa['Players'][$o]['Score'] < 42 )
+        {
+            $max = $mesa['Players'][$o]['Score'];
+        }
+        else
+        $max=$max;
+    }
+    
+    for($o = 0; $o<4; $o++)
+    {
+     if($mesa['Players'][$o]['Score']  == $max)
+        {
+            //$mesa['Players'][$o]['Score']['Outcome'] += 'Winner';
+            $arr[$o] = 'Winner';
+            return $arr;
+        }
+    }
+}
 function printTable($printme)
 {
+    $arr = array('','','','');
     //printme will hold complete array
     //table formatting in progress
-    //working on formatting 
+      for($x = 0 ; $x < 4; $x++)
+        {
+            if($printme['Players'][$x]['Score'] > 42)
+            {
+               // $printme['Players'][$x]['Score']['Outcome'] += 'Bust';
+                $arr[$x] = 'Bust';
+            }
+            else if ($printme['Players'][$x]['Score'] == 42)
+            {
+                $arr[$x] = 'Win';
+                //closestNum($printme,$arr);
+            }
+            else{
+               $arr = closestNum($printme,$arr);
+            }
+        }
        echo "<table class='stats' cellspacing='2'>
 
             <tr>
@@ -292,7 +335,7 @@ function printTable($printme)
               echo "<td>" . '<img src='.$printme['Players'][0]["Image"].'>' . "</td>"; // so this will eventually print user pics
               echo "<td>" . "Card Hand " . "</td>";//maybe a function to loop through hand index
               echo "<td>" . $printme['Players'][0]['Score'] . "</td>";
-              echo "<td>" . "Win/loss". '</td>';
+              echo "<td>" . $arr[0]. '</td>';
 
               echo "</tr>";
               //player 2
@@ -301,7 +344,8 @@ function printTable($printme)
               echo "<td>" . '<img src='.$printme['Players'][1]["Image"].'>' . "</td>";
               echo "<td>" . "Card Hand" . "</td>";
               echo "<td>" . $printme['Players'][1]['Score'] . "</td>";
-              echo "<td>" . "Win/loss". '</td>';
+              echo "<td>" . $arr[1]. '</td>';
+
               echo "</tr>";
               //player 3
               echo "<tr>";
@@ -309,7 +353,7 @@ function printTable($printme)
               echo "<td>" . '<img src='.$printme['Players'][2]["Image"].'>' . "</td>";
               echo "<td>" . "Card Hand" . "</td>";
               echo "<td>" . $printme['Players'][2]['Score'] . "</td>";
-              echo "<td>" . "Win/loss". '</td>';
+              echo "<td>" . $arr[2]. '</td>';
 
               echo "</tr>";
               //player 4
@@ -318,7 +362,7 @@ function printTable($printme)
               echo "<td>" . '<img src='.$printme['Players'][3]["Image"].'>' . "</td>";
               echo "<td>" . "Card Hand" . "</td>";
               echo "<td>" . $printme['Players'][3]['Score'] . "</td>";
-              echo "<td>" . "Win/loss". '</td>';
+              echo "<td>" . $arr[3]. '</td>';
               
               echo "</tr>";
 
