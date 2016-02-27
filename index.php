@@ -3,6 +3,7 @@
 <?php
 
 
+
 $cards= array(
          array("Suite"=>"Clubs",
           "Value"=>1,
@@ -216,6 +217,7 @@ $cards= array(
     );
     
     echo '<img src='.$cards[0]["Picture"].'>';
+
    // echo '<br>';
    //echo $cards[0]["Picture"];
   
@@ -223,6 +225,7 @@ $cards= array(
     $players = array(
     array("Name"=>"John",
         "Image" => "./assets/players/face1.png",
+<<<<<<< HEAD
         "Score" => 0),
     array("Name"=>"Joe",
         "Image"=> "./assets/players/face2.png",
@@ -233,12 +236,67 @@ $cards= array(
     array("Name" => "Jerry",
         "Image"=> "./assets/players/face3.png",
         "Score" => 0)
+=======
+        "Hand" =>array(),
+        "Score"=> 0),
+    array("Name"=>"Joe",
+        "Image"=> "./assets/players/face2.png",
+        "Hand" =>array(),
+        "Score"=> 0),
+    array("Name" => "Jane",
+        "Image"=>"./assets/players/face3.png",
+        "Hand" =>array(),
+        "Score"=> 0),
+    array("Name" => "Jerry",
+        "Image"=> "./assets/players/face3.png",
+        "Hand" =>array(),
+        "Score"=> 0)
+>>>>>>> 1e9c3635c6f0f5d5ff529334844e176d29d9662f
     
     );
+    
+    $tab =array("Players"=>$players,
+                  "Deck"=>array());
+    
     echo '<img src='.$players[0]["Image"].'>';
     $table = [];
-$deck=$cards;
+
+function game($cards,$tabl,$tableCount)
+{
+  $deck=$cards;
+  shuffle($deck);
+  shuffle($deck);
+  shuffle($deck);
+  $table=$tabl;
+  $table["Deck"]=$deck;
+  for($i=0;$i<$tableCount;$i++)
+  {
+  $table=  dealHand($table,$i);
+  }
+ var_dump($table);
+  
+  
+}
+function dealHand($play,$seat)
+{
+   
+  $numCards= rand(4,6);
+  for($i=0;$i<$numCards;$i++)
+  {
+     array_push($play["Players"][$seat]["Hand"],$play["Deck"][$i] );
+     unset($play["Deck"][$i]);
+    $play["Players"][$seat]["Score"] +=$play["Players"][$seat]["Hand"][$i]["Value"];
+  }
+  //var_dump($play["Players"][$seat]["Hand"][0]["Value"]);
+ // var_dump($play["Players"][$seat]["Score"]);
+  $play["Deck"]=array_values($play["Deck"]);
+ 
+ // var_dump($play["Players"][$seat]["Hand"]);
+  
+return $play; 
+}
 echo "Test";
+echo game($cards,$tab,4);
 //var_dump($deck);
 //shuffle($deck);
 //var_dump($deck);
