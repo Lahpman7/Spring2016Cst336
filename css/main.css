@@ -1,0 +1,20 @@
+
+
+body {
+background-image: url("http://blog.hdwallsource.com/wp-content/uploads/2014/10/adorable-white-wallpaper-16875-17428-hd-wallpapers.jpg");
+
+
+}
+
+table {
+    width: 50%;
+    
+}
+th {
+    text-align: right;
+}
+#teedee {
+     /* the normal 'fixed' width */
+    border-spacing: 10px 10px;
+    /* the normal 'fixed' width, to stop the cells expanding */
+}

@@ -356,7 +356,7 @@ function printTable($printme)
             }
         }
        echo"<form >";
-       echo "<table class='stats' cellspacing='2'>
+       echo "<table >
 
             <tr>
             <td class='hed' align = 'center'>SILVER JACK</td>
@@ -365,10 +365,10 @@ function printTable($printme)
 
             </tr>";
                //player1
-              echo "<tr>";
+              echo "<tr>";//colspan="2"
               echo "<td>" . "John" . "</td>";//["Players"][$seat]["Score"]
               echo "<td>" . '<img src='.$printme['Players'][0]["Image"].'>' . "</td>"; // so this will eventually print user pics
-              echo "<td>" . printHand($printme['Players'][0]['Hand']). "</td>";//maybe a function to loop through hand index
+              echo "<td id = 'teedee'>" . printHand($printme['Players'][0]['Hand']). "</td>";//maybe a function to loop through hand index
               echo "<td>" . $printme['Players'][0]['Score'] . "</td>";
               echo "<td>" . $arr[0]. '</td>';
 
@@ -377,7 +377,7 @@ function printTable($printme)
               echo "<tr>";
               echo "<td>" . "Joe" . "</td>";
               echo "<td>" . '<img src='.$printme['Players'][1]["Image"].'>' . "</td>";
-              echo "<td>" . printHand($printme['Players'][1]['Hand']). "</td>";
+              echo "<td id = 'teedee'>" . printHand($printme['Players'][1]['Hand']). "</td>";
               echo "<td>" . $printme['Players'][1]['Score'] . "</td>";
               echo "<td>" . $arr[1]. '</td>';
 
@@ -386,7 +386,7 @@ function printTable($printme)
               echo "<tr>";
               echo "<td>" . "Jane" . "</td>";
               echo "<td>" . '<img src='.$printme['Players'][2]["Image"].'>' . "</td>";
-              echo "<td>" . printHand($printme['Players'][2]['Hand']). "</td>";
+              echo "<td id = 'teedee'>" . printHand($printme['Players'][2]['Hand']). "</td>";
               echo "<td>" . $printme['Players'][2]['Score'] . "</td>";
               echo "<td>" . $arr[2]. '</td>';
 
@@ -395,7 +395,7 @@ function printTable($printme)
               echo "<tr>";
               echo "<td>" . "Jerry" . "</td>";
               echo "<td>" . '<img src='.$printme['Players'][3]["Image"].'>' . "</td>";
-              echo "<td>" . printHand($printme['Players'][3]['Hand']). "</td>";
+              echo "<td id = 'teedee'>" . printHand($printme['Players'][3]['Hand']). "</td>";
               echo "<td>" . $printme['Players'][3]['Score'] . "</td>";
               echo "<td>" . $arr[3]. '</td>';
               
@@ -407,9 +407,9 @@ function printTable($printme)
     echo "</table>";
     echo"</form>";
 }
-echo "Test";
-//$final_table = game($cards,$tab,4);
 
+
+//$final_table = game($cards,$tab,4);
 //printTable($final_table); //tests outside of worker functions
 //var_dump($deck);
 //shuffle($deck);
@@ -419,8 +419,8 @@ echo "Test";
 <html>
 
 <head>
-
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <title>Game</title>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
 
 </head>
 
