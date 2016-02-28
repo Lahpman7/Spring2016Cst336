@@ -355,6 +355,7 @@ function printTable($printme)
                $arr = closestNum($printme,$arr);
             }
         }
+       echo"<form >";
        echo "<table class='stats' cellspacing='2'>
 
             <tr>
@@ -399,14 +400,37 @@ function printTable($printme)
               echo "<td>" . $arr[3]. '</td>';
               
               echo "</tr>";
-
+              
+              echo"<tr>";
+              echo"<td><input  type='reset' value='Play Again' onClick='window.location.reload()'></td>";
+              echo"</tr>";
     echo "</table>";
+    echo"</form>";
 }
 echo "Test";
 //$final_table = game($cards,$tab,4);
-game($cards,$tab,4);
+
 //printTable($final_table); //tests outside of worker functions
 //var_dump($deck);
 //shuffle($deck);
 //var_dump($deck);
 ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+
+</head>
+
+<body>
+    <?php
+    game($cards,$tab,4);
+    ?>
+    <footer>
+    
+    </footer>
+</body>
+
+</html>
