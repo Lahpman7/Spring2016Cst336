@@ -1,8 +1,26 @@
-
+.hed{
+    width:50px;
+    height:50px;
+    position:relative;
+    margin-left:-150px; /* half of width */
+    margin-top:-150px;  /* half of height */
+    top:50%;
+    left:50%;
+    color:red;
+}
+.button
+{
+    width:50px;
+    height:50px;
+    position:relative;
+    margin-left:-150px; /* half of width */
+    margin-top:-150px;  /* half of height */
+    top:50%;
+    left:50%;
+}
 
 body {
 background-image: url("http://blog.hdwallsource.com/wp-content/uploads/2014/10/adorable-white-wallpaper-16875-17428-hd-wallpapers.jpg");
-
 
 }
 
@@ -13,8 +31,10 @@ table {
 th {
     text-align: right;
 }
+
 #teedee {
      /* the normal 'fixed' width */
+  
     border-spacing: 10px 10px;
     /* the normal 'fixed' width, to stop the cells expanding */
 }

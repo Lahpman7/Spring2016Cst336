@@ -302,12 +302,19 @@ function printHand($hand)
 {
     $length=count($hand);
   
-   for($i=0;$i<$length;$i++)
+   for($i=0;$i<6;$i++)
    {
-        
+        if($i<$length)
+        {
        echo '<td><img src='.$hand[$i]["Picture"].'></td>';
+        }
+        else{
+            echo"<td></td>";
+        
+        }
     
    }
+  
     
 }
 
@@ -355,10 +362,11 @@ function printTable($printme)
                $arr = closestNum($printme,$arr);
             }
         }
+       
        echo"<form >";
-       echo "<table >
+       echo "<table  >
 
-            <tr>
+            <tr >
             <td class='hed' align = 'center'>SILVER JACK</td>
               </tr>
             <tr>
@@ -401,11 +409,13 @@ function printTable($printme)
               
               echo "</tr>";
               
-              echo"<tr>";
+              echo"<tr class ='button'>";
               echo"<td><input  type='reset' value='Play Again' onClick='window.location.reload()'></td>";
               echo"</tr>";
+              
     echo "</table>";
     echo"</form>";
+
 }
 
 
