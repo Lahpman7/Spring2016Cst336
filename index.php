@@ -362,13 +362,11 @@ function printTable($printme)
                $arr = closestNum($printme,$arr);
             }
         }
-       
+      
        echo"<form >";
-       echo "<table  >
+       echo "<table >
 
-            <tr >
-            <td class='hed' align = 'center'>SILVER JACK</td>
-              </tr>
+           
             <tr>
 
             </tr>";
@@ -409,7 +407,7 @@ function printTable($printme)
               
               echo "</tr>";
               
-              echo"<tr class ='button'>";
+              echo"<tr class ='button' colspan=6>";
               echo"<td><input  type='reset' value='Play Again' onClick='window.location.reload()'></td>";
               echo"</tr>";
               
@@ -431,16 +429,14 @@ function printTable($printme)
 <head>
     <title>Game</title>
     <link rel="stylesheet" type="text/css" href="./css/main.css">
-
+<h1 align="center">Silver Jack</h1>
 </head>
 
-<body>
+<body >
     <?php
     game($cards,$tab,4);
     ?>
-    <footer>
-    
-    </footer>
+   
 </body>
 
 </html>
