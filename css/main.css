@@ -31,10 +31,3 @@ table {
 th {
     text-align: right;
 }
-
-#teedee {
-     /* the normal 'fixed' width */
-  
-    border-spacing: 10px 10px;
-    /* the normal 'fixed' width, to stop the cells expanding */
-}
